@@ -1,3 +1,6 @@
+/data/GADM*
+/data/CAN*
+
 # History files
 .Rhistory
 .Rapp.history
