@@ -25,6 +25,19 @@ source("getData.R")
 - Great lake shapefiles are available at: https://www.sciencebase.gov/catalog/item/530f8a0ee4b0e7e46bd300dd
 
 
+## Maps
+
+### Basic map
+
+![](fig/basic.png)
+
+### Custom map
+
+![](fig/custom.png)
+
+
+
+
 ## References
 
 1. See tutorials on [inSileco](https://insileco.github.io/2018/04/14/r-in-space---a-series/created)
