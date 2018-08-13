@@ -24,6 +24,21 @@ source("getData.R")
 
 - Great lake shapefiles are available at: https://www.sciencebase.gov/catalog/item/530f8a0ee4b0e7e46bd300dd
 
+- tertiary watersheds: https://www.ontario.ca/data/watershed-tertiary
+
+
+## Maps
+
+### Basic map
+
+![](fig/basic.png)
+
+### Custom map
+
+![](fig/custom.png)
+
+
+
 
 ## References
 

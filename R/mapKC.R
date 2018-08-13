@@ -4,6 +4,8 @@ library(sp)
 library(raster)
 library(rgdal)
 library(rgeos)
+# to install graphicsutils
+# devtools::install_github("inSileco/graphicsUtrils")
 library(graphicsutils)
 
 #
@@ -18,6 +20,10 @@ lkSup <- readOGR("data/hydro_p_LakeSuperior/hydro_p_LakeSuperior.shp")
 lkStc <- readOGR("data/hydro_p_LakeStClair/hydro_p_LakeStClair.shp")
 #
 lakes <- readRDS("data/lakes_ont.rds")
+
+## tertionary watersheds
+watSheds3 <- spTransform(readOGR("data/tertionaryWatersheds/WATERSHED_TERTIARY.shp"), bouCAN@proj4string)
+
 
 # plot(bouCAN[11,], axis =)
 png(file = 'fig/custom.png', res = 600, units = 'in', width = 6, height = 7)
@@ -34,6 +40,9 @@ plot(bouCAN, add = T, col ='#b5cfbd', border = mygre)
 plot(bouUSA, add = T, col ='#b5cfbd', border = mygre)
 # text(coordinates(bouUSA), labels = bouUSA@data$NAME_1)
 image(altONT, add = T, col = mypal)
+plot(watSheds3, add = T, col = NA, border = "grey45", lwd = .5)
+
+##
 plot(lkHur, add = T, col = myblu, border = mygre)
 plot(lkMic, add = T, col = myblu, border = mygre)
 plot(lkSup, add = T, col = myblu, border = mygre)
