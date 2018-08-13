@@ -20,8 +20,8 @@ lkSup <- readOGR("data/hydro_p_LakeSuperior/hydro_p_LakeSuperior.shp")
 lkStc <- readOGR("data/hydro_p_LakeStClair/hydro_p_LakeStClair.shp")
 #
 lakes <- readRDS("data/lakes_ont.rds")
-
-
+#
+watSheds3 <- readRDS("data/watSheds3.rds")
 
 # plot(bouCAN[11,], axis =)
 png(file = 'fig/custom.png', res = 600, units = 'in', width = 6, height = 7)

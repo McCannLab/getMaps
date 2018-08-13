@@ -9,7 +9,7 @@ A couple of R scripts to create maps.
 - mapview
 - raster
 - sp
-- sf (not used yet)
+- sf
 
 
 ## Data
