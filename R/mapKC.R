@@ -21,8 +21,6 @@ lkStc <- readOGR("data/hydro_p_LakeStClair/hydro_p_LakeStClair.shp")
 #
 lakes <- readRDS("data/lakes_ont.rds")
 
-## tertionary watersheds
-watSheds3 <- spTransform(readOGR("data/tertionaryWatersheds/WATERSHED_TERTIARY.shp"), bouCAN@proj4string)
 
 
 # plot(bouCAN[11,], axis =)
