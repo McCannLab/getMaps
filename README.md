@@ -40,6 +40,19 @@ source("getData.R")
 
 
 
+## Maps
+
+### Basic map
+
+![](fig/basic.png)
+
+### Custom map
+
+![](fig/custom.png)
+
+
+
+
 ## References
 
 1. See tutorials on [inSileco](https://insileco.github.io/2018/04/14/r-in-space---a-series/created)
