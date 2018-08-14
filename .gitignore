@@ -1,6 +1,7 @@
 /data/GADM*
 /data/CAN*
 /data/tertionaryWatersheds/
+csvFiles/
 
 # History files
 .Rhistory
