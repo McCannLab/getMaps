@@ -2,6 +2,7 @@
 /data/CAN*
 /data/tertionaryWatersheds/
 csvFiles/
+bash/data/
 
 # History files
 .Rhistory
