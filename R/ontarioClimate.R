@@ -9,6 +9,7 @@ ls_mxt <- list()
 k <- 0
 for (year in 2008:2012) {
   k <- k + 1
+  # get July max temperature 
   ra <- raster(paste0("climateData/", year, "/maxt_07.asc"))
   ## crop
   ls_mxt[[k]] <- rasterize(x = bouONT, y = crop(ra, bouONT@bbox), mask = T)
