@@ -7,13 +7,15 @@ end="_300arcsec.zip"
 # info="pcp"
 # info="mint"
 # info="maxt"
-info="sg"
+# info="sg"
 
-
-for y in `seq 1950 2013`
+for info in "bio" "cmi" "pcp" "mint" "maxt" "sg"
 do
-  # echo $basurl$info$y$end
-  wget $basurl$info$y$end -O "/tmp/"$info$y$end
-  unzip "/tmp/"$info$y$end
-  mv $y "data/"$info$y
+  for y in `seq 1930 1949`
+  do
+    # echo $basurl$info$y$end
+    wget $basurl$info$y$end -O "/tmp/"$info$y$end
+    unzip "/tmp/"$info$y$end
+    mv $y "data/"$info$y
+  done
 done
