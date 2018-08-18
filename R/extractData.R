@@ -31,3 +31,6 @@ getClimateData <- function(info = "bio", years = 1940:2012) {
 
 getClimateData("bio")
 getClimateData("cmi")
+getClimateData("pcp")
+getClimateData("mint")
+getClimateData("maxt")
