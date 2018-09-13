@@ -26,11 +26,12 @@ getClimateData <- function(info = "bio", years = 1940:2012) {
     cat("done \n")
   }
 
-  saveRDS(lakes_tmp, paste("climateData/lakes_", info, ".rds"))
+  saveRDS(lakes_tmp, paste0("climateData/lakes_", info, ".rds"))
 }
 
-getClimateData("bio")
-getClimateData("cmi")
-getClimateData("pcp")
-getClimateData("mint")
-getClimateData("maxt")
+# getClimateData("bio")
+# getClimateData("cmi")
+# getClimateData("pcp")
+# getClimateData("mint")
+# getClimateData("maxt")
+getClimateData("sg")

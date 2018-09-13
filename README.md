@@ -3,26 +3,25 @@
 A couple of R scripts to create maps.
 
 
-## Packages required
+## R packages required
 
 - graphicsutils, see https://github.com/inSileco/graphicsutils
-- mapview
-- raster
-- sp
-- sf
+- [mapview](https://cran.r-project.org/web/packages/mapview/index.html) which
+imports all packages required.
+
 
 
 ## Data
 
 - Elevation data as well as administrative boundaries are retrieved using `getData()`
-from the `raster` but not included in the repo the get these data source
+from the `raster` but not included in the repository the get these data source
 `getData.R`:
 
 ```r
 source("getData.R")
 ```
 
-- Great lake shapefiles are available at: https://www.sciencebase.gov/catalog/item/530f8a0ee4b0e7e46bd300dd
+- Great lakes shapefiles available at: https://www.sciencebase.gov/catalog/item/530f8a0ee4b0e7e46bd300dd
 
 - tertiary watersheds: https://www.ontario.ca/data/watershed-tertiary
 
@@ -37,18 +36,9 @@ source("getData.R")
 
 ![](fig/custom.png)
 
+### Map Stream
 
-
-
-## Maps
-
-### Basic map
-
-![](fig/basic.png)
-
-### Custom map
-
-![](fig/custom.png)
+![](fig/map_stream.png)
 
 
 
