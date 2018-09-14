@@ -22,7 +22,7 @@ lakes <- readRDS("data/lakes_ont.rds")
 #
 watSheds3 <- readRDS("data/watSheds3.rds") %>% st_as_sf %>% st_simplify(FALSE, .002)
 #
-id <- c(27, 36:38, 62:64, 43:44)
+id <- c(36:38, 27, 43:44, 62:64)
 #
 myblue <- "#9fceec"
 add_lakes <- function() {
@@ -45,6 +45,7 @@ plot(st_geometry(bouUSA0), add = TRUE, col = "#c5e6b8", border = NA)
 plot(st_geometry(bouCAN[11,]), add = TRUE, col = "grey90", border = NA)
 add_lakes()
 plot(st_geometry(watSheds3[id, ]), col = "grey50", add = TRUE, border = "grey25", lwd = .5)
+text(st_coordinates(st_centroid(watSheds3[id, ])), labels = 1:9)
 ##
 plot(st_geometry(bouCAN[11,]), add = TRUE, col = NA, border = "grey15", lwd = 1.2)
 axis(1, lwd = .9)
@@ -55,19 +56,13 @@ axis(4, lwd = .9)
 box2(lwd = 1.1)
 
 par(new = TRUE, fig = c(.58, .985, 0.015, .55))
-plot0(c(-95, -75), c(41, 57), fill = myblue)
+plot0(c(-95, -72), c(41, 57), fill = myblue)
 plot(st_geometry(bouCAN0), add = TRUE, col = "#cbb583", border = NA)
 plot(st_geometry(bouUSA0), add = TRUE, col = "#c5e6b8", border = NA)
 plot(st_geometry(bouCAN[11,]), add = TRUE, col = "grey90", border = NA)
 add_lakes()
-plot(st_geometry(watSheds3[id, ]), col = "grey50", add = TRUE, border = "grey25", lwd = .5)
+plot(st_geometry(watSheds3[id, ]), col = "grey40", add = TRUE, border = "grey25", lwd = .5)
 rect(-85, 41.5, -73.2, 46.2, lwd = .5)
-box2(lwd = 1.1)
+box2(lwd = .9)
 
 dev.off()
-
-
-plot(st_geometry(bouCAN0), add = TRUE, col = "#cbb583", border = NA)
-plot(st_geometry(bouUSA0), add = TRUE, col = "#c5e6b8", border = NA)
-plot(st_geometry(watSheds3[id, ]), col = "grey70", add = TRUE, border = NA)
-rect(-85, 41.5, -73.2, 46.2)

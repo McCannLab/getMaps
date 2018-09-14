@@ -10,7 +10,6 @@ A couple of R scripts to create maps.
 imports all packages required.
 
 
-
 ## Data
 
 - Elevation data as well as administrative boundaries are retrieved using `getData()`
@@ -23,8 +22,9 @@ source("getData.R")
 
 - Great lakes shapefiles available at: https://www.sciencebase.gov/catalog/item/530f8a0ee4b0e7e46bd300dd
 
-- tertiary watersheds: https://www.ontario.ca/data/watershed-tertiary
+- Tertiary watersheds: https://www.ontario.ca/data/watershed-tertiary
 
+- Secondary watersheds: https://www.ontario.ca/data/watershed-secondary
 
 ## Maps
 

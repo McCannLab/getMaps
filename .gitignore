@@ -1,6 +1,8 @@
 /data/GADM*
 /data/CAN*
 /data/tertionaryWatersheds/
+/data/secondaryWatersheds/
+/data/lakesBSM/
 climateData/*
 csvFiles/
 bash/data/
