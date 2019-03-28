@@ -11,7 +11,7 @@ end="_300arcsec.zip"
 
 for info in "bio" "cmi" "pcp" "mint" "maxt" "sg"
 do
-  for y in `seq 1930 1931`
+  for y in `seq 1980 1999`
   do
     # echo $basurl$info$y$end
     wget $basurl$info$y$end -O "/tmp/"$info$y$end

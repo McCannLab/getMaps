@@ -17,6 +17,11 @@ See http://cfs.nrcan.gc.ca/projects/3/8
 There is two ways to retrieve climate data:
 
 - use the bash script: `getMaps.sh` in  `bash/`;
+
+```shell
+sh getMaps.sh
+```
+
 - use the R script: `retrieveClimatData.R` in `R/`.
 
 
@@ -47,9 +52,11 @@ See https://open.canada.ca/data/en/dataset/18e3ef1a-497c-40c6-8326-aac1a34a0dec
 
 
 
-## Maps
+## Maps -- examples
 
 ### Basic map
+
+See `R/basicMaps.R`
 
 ![](fig/basic.png)
 
@@ -68,6 +75,6 @@ See https://open.canada.ca/data/en/dataset/18e3ef1a-497c-40c6-8326-aac1a34a0dec
 
 1. See tutorials on [inSileco](https://insileco.github.io/2018/04/14/r-in-space---a-series/created)
 
-2. and a very helpful representation by @mhBrice: https://mhbrice.github.io/Rspatial/
+2. a very helpful representation by @mhBrice: https://mhbrice.github.io/Rspatial/
 
-Both links above include a list of useful resources.
+Links above include a list of useful resources.
