@@ -1,5 +1,9 @@
 library(raster)
 
+##-- NB to check iso3, do
+# getData("ISO3")
+
+
 ## Data (see getData)
 ONT <- getData(country = "CAN", level = 1, path = "data/")[9,]
 JPN <- getData(country = "JPN", level = 0, path = "data/")

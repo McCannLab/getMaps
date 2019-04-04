@@ -2,11 +2,20 @@
 
 R scripts to retrieve climate data and create different maps.
 
-## R packages required
+## Installation
+
+```R
+install.packages("devtools")
+remotes::install_github("inSileco/graphicsutils")
+install.packages(c("sf", "sp", "rgeos", "raster", "tidyverse", "rgdal"))
+```
+
+Notes:
 
 - graphicsutils, see https://github.com/inSileco/graphicsutils
 - [mapview](https://cran.r-project.org/web/packages/mapview/index.html) which
 imports all packages required.
+
 
 
 ## Spatial data
@@ -22,18 +31,25 @@ There is two ways to retrieve climate data:
 sh getMaps.sh
 ```
 
-- use the R script: `retrieveClimatData.R` in `R/`.
+- use `retrieveClimatData()`.
+
+
+```R
+source("R/retrieveClimateData.R")
+retrieveClimateData(years = 2014:2015, info = "bio", res = 300)
+```
+
+
 
 
 ### Elevation Data
 
-- Elevation data as well as administrative boundaries are retrieved using `getData()`
-from the `raster` but not included in the repository the get these data source
-`getData.R`:
+- Elevation data as well as administrative boundaries are retrieved using `getData()` from raster package
 
-```r
-source("getData.R")
+```R
+source("R/retrieveClimatData.R")
 ```
+
 
 ### Shapefiles
 
