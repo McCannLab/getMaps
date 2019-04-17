@@ -28,6 +28,7 @@ There is two ways to retrieve climate data:
 - use the bash script: `getMaps.sh` in  `bash/`;
 
 ```shell
+cd bash
 sh getMaps.sh
 ```
 

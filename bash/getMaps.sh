@@ -1,7 +1,9 @@
 #!/bin/bash
 
-basurl="ftp://ftp.nrcan.gc.ca/pub/outgoing/NAM_grids/zipfiles300/"
-end="_300arcsec.zip"
+# basurl="ftp://ftp.nrcan.gc.ca/pub/outgoing/NAM_grids/zipfiles300/"
+# end="_300arcsec.zip"
+basurl="ftp://ftp.nrcan.gc.ca/pub/outgoing/NAM_grids/zipfiles60/"
+end="_60arcsec.zip"
 # info="bio"
 # info="cmi"
 # info="pcp"
@@ -9,13 +11,14 @@ end="_300arcsec.zip"
 # info="maxt"
 # info="sg"
 
-for info in "bio" "cmi" "pcp" "mint" "maxt" "sg"
+# for info in "bio" "cmi" "pcp" "mint" "maxt" "sg"
+for info in "bio"
 do
-  for y in `seq 1980 1999`
+  for y in `seq 1970 1979`
   do
     # echo $basurl$info$y$end
     wget $basurl$info$y$end -O "/tmp/"$info$y$end
     unzip "/tmp/"$info$y$end
-    mv $y "data/"$info$y
+    mv $y "data60/"$info$y
   done
 done

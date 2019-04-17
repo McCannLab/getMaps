@@ -2,10 +2,15 @@
 /data/CAN*
 /data/tertionaryWatersheds/
 /data/secondaryWatersheds/
+/data/delta*.rds
+/data/gadm*.rds
 /data/lakesBSM/
 climateData/*
 csvFiles/
 bash/data/
+bash/data60/
+fig/map.png
+
 
 # History files
 .Rhistory
