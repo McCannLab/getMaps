@@ -13,7 +13,7 @@ rasBSM <- calc(stack(getListFiles(years = 2000:2009)), mean)
 
 ONT <- getData(country = "CAN", level = 1, path = "data/")[9,]
 cc <- crop(.1*(rasBSM - rasAHI), ONT)
-saveRDS(cc, "data/delta_temp_ontarion.rds")
+saveRDS(cc, "data/delta_temp_ontario.rds")
 
 plot(mask(cc, ONT))
 
@@ -22,7 +22,9 @@ raspAHI <- calc(stack(getListFiles(years = 1970:1979, subinfo = "bio60_12")), me
 raspBSM <- calc(stack(getListFiles(years = 2000:2009, subinfo = "bio60_12")), mean)
 
 pcp <- crop(raspBSM - raspAHI, ONT)
+par(bty = "o")
 plot(pcp)
-saveRDS(pcp, "data/delta_prec_ontarion.rds")
+saveRDS(pcp, "data/delta_prec_ontario.rds")
 
-plot(mask(pcp, ONT))
+
+image(mask(pcp, ONT))
