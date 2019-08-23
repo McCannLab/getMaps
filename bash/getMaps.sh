@@ -14,7 +14,7 @@ end="_60arcsec.zip"
 # for info in "bio" "cmi" "pcp" "mint" "maxt" "sg"
 for info in "bio"
 do
-  for y in `seq 1970 1979`
+  for y in `seq 1994 1999`
   do
     # echo $basurl$info$y$end
     wget $basurl$info$y$end -O "/tmp/"$info$y$end
