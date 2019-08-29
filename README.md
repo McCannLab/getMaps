@@ -68,7 +68,6 @@ See https://open.canada.ca/data/en/dataset/18e3ef1a-497c-40c6-8326-aac1a34a0dec
 
 
 
-
 ## Maps -- examples
 
 ### Basic map
@@ -77,13 +76,6 @@ See `R/basicMaps.R`
 
 ![](fig/basic.png)
 
-### Custom map
-
-![](fig/custom.png)
-
-### Map Stream
-
-![](fig/map_stream.png)
 
 
 

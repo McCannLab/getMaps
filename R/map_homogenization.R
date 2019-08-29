@@ -1,4 +1,4 @@
-# A map I have drawn for my manuscript on homogenzation (few changes though)
+# Map for my manuscript on homogenization (few changes though)
 library(sp)
 library(raster)
 library(rgdal)
@@ -82,7 +82,8 @@ image(t(as.matrix(seq(valt[1], valt[2], length = ncolor))), col = palc, axes = F
 mtext(side = 3, line = 2.1, text = 'Annual', cex = .7)
 mtext(side = 3, line = .8, text = 'Temperature (Δ°C)', cex = .7)
 # chose based on valt
-sq <- seq(0.60, 1.9, length = 5)
+sq <- seq(0.60, 1.9, length = 5)#' @param cex_bas magnification coefficient, controls the size of plot elements.
+
 axis(4, at = scaleWithin(sq, ncolor, valt[1], valt[2])/ncolor, labels = paste0(sq), lwd = 0, lwd.tick = .8, tck = -.36)
 #
 

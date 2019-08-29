@@ -9,7 +9,7 @@ climateData/*
 csvFiles/
 bash/data/
 bash/data60/
-fig/map*.png
+fig/fig_map*.png
 
 
 # History files
