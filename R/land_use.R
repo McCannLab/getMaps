@@ -63,6 +63,8 @@ for (i in seq_along(bufs)) {
   res[[i]] <- extract_sf_buf(fl, pts, bufs[i])
 }
 
+saveRDS(res_, "land_use_raw.rds")
+
 res_simplified <- lapply(
   res,
   function(x) cbind(
