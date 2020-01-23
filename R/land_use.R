@@ -46,6 +46,8 @@ simplify_lu <- function(vc_lu, perc = TRUE) {
 
 
 # Example
+library(raster)
+library(sf)
 pts <- st_as_sf(
   read.csv("csvFiles/emily_site_coords.csv"),
   coords = c("long", "lat"),
@@ -63,7 +65,7 @@ for (i in seq_along(bufs)) {
   res[[i]] <- extract_sf_buf(fl, pts, bufs[i])
 }
 
-saveRDS(res_, "land_use_raw.rds")
+saveRDS(res, "land_use_raw.rds")
 
 res_simplified <- lapply(
   res,

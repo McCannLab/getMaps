@@ -72,4 +72,4 @@ See `R/basicMaps.R`
 
 ## References
 
-If you need to learn more about how to manipulate GIS data using R, have a look at this tutorial on [inSileco](https://insileco.github.io/2018/04/14/r-in-space---a-series/created).
+If you need to learn more about how to manipulate GIS data using R, have a look at this tutorial on [inSileco](https://insileco.github.io/tuto/rinspace/rinspace_homepage/).
