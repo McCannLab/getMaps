@@ -3,12 +3,10 @@ library(rgdal)
 library(sp)
 library(magrittr)
 
-# Declare variables to store data
-lakes <- readRDS("data/spLakeBSMAHI.rds")
 # lakes_pcp <- lakes_cmi <- lakes_sg <- readRDS("data/spLakeBSMAHI.rds")
 
-getClimateData <- function(info = "bio", years = 1980:1999, basename = "climateData/lakes_") {
-  lakes_tmp  <- lakes
+getClimateData <- function(info = "bio", years = 1980:1999, basename = "climateData/lakes_", lakes = readRDS("data/spLakeBSMAHI.rds")) {
+  out <- lakes
   ## Create a list of raster
   for (year in years) {
     cat(year, " ...... ")
@@ -17,16 +15,18 @@ getClimateData <- function(info = "bio", years = 1980:1999, basename = "climateD
     #
     tmp <- lapply(vc_fl, raster) %>%
       lapply(FUN = function(x) raster::extract(x, y = lakes)) %>%
-      do.call(cbind, .) %>% as.data.frame
+      do.call(cbind, .) %>%
+      as.data.frame
     #
     names(tmp) <- paste0("CD_", year, "_",
       gsub(list.files(nm_fo, pattern = "*asc"), pat = ".asc", rep = ""))
     #
-    lakes_tmp@data %<>% cbind(tmp)
+    out@data <- cbind(out@data, tmp)
     cat("done \n")
   }
 
-  saveRDS(lakes_tmp, paste0(basename, info, ".rds"))
+  saveRDS(out, paste0(basename, info, ".rds"))
+  out
 }
 
 # getClimateData("bio", years = 1980:1999)
@@ -34,4 +34,4 @@ getClimateData <- function(info = "bio", years = 1980:1999, basename = "climateD
 # getClimateData("pcp")
 # getClimateData("mint")
 # getClimateData("maxt")
-getClimateData("sg")
+# getClimateData("sg", years = 1980)
