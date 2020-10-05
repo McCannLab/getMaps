@@ -56,7 +56,7 @@ In `data/` are included shapefiles for Great Lakes and watersheds:
 ### Land Use data
 
 See https://open.canada.ca/data/en/dataset/18e3ef1a-497c-40c6-8326-aac1a34a0dec.
-
+The description of the categories is in the [ISO 19131 – Land Use 1990, 2000, 2010 Data Product Specifications](http://www.agr.gc.ca/atlas/supportdocument_documentdesupport/aafcLand_Use/en/ISO_19131_Land_Use_1990__2000_2010_Data_Product_Specifications.pdf)
 
 
 

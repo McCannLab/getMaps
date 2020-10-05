@@ -26,7 +26,7 @@ extract_from_coords <- function(file_lu, xy, crs, buf) {
 
 
 #' @param vc_lu vector of Land Use value
-#' @param perc logical. Should the results be expressed as a percentage? Note that given that some categories are discarded this may nit sum up to 1.
+#' @param perc logical. Should the results be expressed as a percentage? Note that given that some categories are discarded this may not sum up to 1.
 simplify_lu <- function(vc_lu, perc = TRUE) {
   # NB 11 => unclassified (see guide)
   # 31 => water
@@ -43,6 +43,34 @@ simplify_lu <- function(vc_lu, perc = TRUE) {
 }
 
 
+simplify_lu2 <- function(vc_lu, perc = TRUE) {
+
+  out <- data.frame(
+    unclassified = 11,
+    settlement = 21,
+    roads = 25,
+    water = 31,
+    forest = 41, 
+    forest_wetland = 42,
+    trees = 45,
+    tress_wetland = 46,
+    cropland = 51,
+    grassland_managed = 61,
+    grassland_unmanaged = 62,
+    wetland = 71, 
+    wetland_shrub = 73,
+    wetland_herd = 74, 
+    other_land = 91
+  )
+  
+  for (i in 1:NCOL(out)) {
+    out[1, i] <- sum(vc_lu == out[1, i])
+  }
+  
+  if (perc) out/length(vc_lu) else out
+}
+
+
 
 
 # Example
@@ -53,8 +81,8 @@ pts <- st_as_sf(
   coords = c("long", "lat"),
   crs = 4326) # %>% st_transform(crs = 3161)
 
-# this file was dowloaded
-fl <- "~/Documents/data/LandUse/IMG_AAFC_LANDUSE_Z17_2010/IMG_AAFC_LANDUSE_Z17_2010.tif"
+# this file was downloaded -- your path will be different
+fl <- "/media/kevcaz/hijo92/Data/landUse/IMG_AAFC_LANDUSE_Z17_2010/IMG_AAFC_LANDUSE_Z17_2010.tif"
 
 extract_sf(fl, pts)
 
@@ -74,6 +102,16 @@ res_simplified <- lapply(
     do.call(rbind, lapply(x, simplify_lu))
   )
 )
+
+res_simplified2 <- lapply(
+  res,
+  function(x) cbind(
+    sitecode = pts$sitecode,
+    do.call(rbind, lapply(x, simplify_lu2))
+  )
+)
+# check 
+# lapply(res_simplified2, function(x) apply(x[, -1], 1, sum))
 
 names(res_simplified) <- paste0("bdist_", bufs)
 saveRDS(res_simplified, "land_use_simplified.rds")

@@ -7,6 +7,10 @@
 #' @param path folder where files will be stored.
 #' @param keep_zip a logical. Should zip files be kept? Default is set to `FALSE`.
 
+#' @examples
+#' retrieveClimateData(2010:2011)
+#'
+
 retrieveClimateData <- function(years = 1900:2015,
   info =  c("bio", "cmi", "mint", "maxt", "pcp", "sg"), res = 300,
   path = "climateData/", keep_zip = FALSE) {
@@ -21,10 +25,13 @@ retrieveClimateData <- function(years = 1900:2015,
   end <- paste0("_", res, "arcsec.zip")
   # year available: from 1900 to 2017
   for (year in years) {
-    zout <- paste0("path", info, year, ".zip")
+    tmp <- tempfile(fileext = ".zip")
+    print(tmp)
     print(paste0(beg, info, year, end))
-    download.file(paste0(beg, info, year, end), destfile = zout)
-    unzip(zout, exdir = "climateData")
-    if (!keep_zip) unlink(zout)
+    curl::curl_download(paste0(beg, info, year, end), tmp)
+    # download.file(paste0(beg, info, year, end), destfile = zout)
+    unzip(tmp, exdir = "climateData")
+    # if (!keep_zip) unlink(tmp)
   }
+  invisible(NULL)
 }

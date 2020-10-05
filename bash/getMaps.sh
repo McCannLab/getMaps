@@ -12,9 +12,10 @@ end="_60arcsec.zip"
 # info="sg"
 
 # for info in "bio" "cmi" "pcp" "mint" "maxt" "sg"
-for info in "bio"
+for info in "bio" "sg"
+# for info in "bio"
 do
-  for y in `seq 1994 1999`
+  for y in `seq 2010 2018`
   do
     # echo $basurl$info$y$end
     wget $basurl$info$y$end -O "/tmp/"$info$y$end
