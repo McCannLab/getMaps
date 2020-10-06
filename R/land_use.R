@@ -2,7 +2,7 @@
 #' @param sf sf object
 extract_sf <- function(file_lu, sf) {
   ra <- raster(file_lu)
-  extract(ra, st_transform(sf, crs = projection(ra)))
+  raster::extract(ra, st_transform(sf, crs = projection(ra)))
 }
 
 #' @param file_lu file pf LU file
@@ -10,7 +10,7 @@ extract_sf <- function(file_lu, sf) {
 #' @param buf buffer distance
 extract_sf_buf <- function(file_lu, sf, buf) {
   ra <- raster(file_lu)
-  extract(ra, st_buffer(st_transform(sf, crs = projection(ra)), buf))
+  raster::extract(ra, st_buffer(st_transform(sf, crs = projection(ra)), buf))
 }
 
 
@@ -20,7 +20,7 @@ extract_sf_buf <- function(file_lu, sf, buf) {
 extract_from_coords <- function(file_lu, xy, crs, buf) {
   ra <- raster(file_lu)
   st_as_sf(xy, coords = 1:2)
-  extract(ra, st_transform(sf, crs = projection(ra)))
+  raster::extract(ra, st_transform(sf, crs = projection(ra)))
 }
 
 
@@ -76,7 +76,7 @@ simplify_lu2 <- function(vc_lu, perc = TRUE) {
 # Example
 library(raster)
 library(sf)
-pts <- st_as_sf(
+pts <- sf::st_as_sf(
   read.csv("csvFiles/emily_site_coords.csv"),
   coords = c("long", "lat"),
   crs = 4326) # %>% st_transform(crs = 3161)
